@@ -24,15 +24,12 @@ labels = {k: v["label"] for k, v in PRESETS.items()}
 audio = st.file_uploader("① ارفع الملف الصوتي (mp3 / wav / m4a / ogg)", type=["mp3", "wav", "m4a", "ogg", "aac", "mp4"])
 style = st.selectbox("② اختر الستايل", list(labels), format_func=lambda k: labels[k])
 
-with st.expander("③ إعدادات التفريغ الصوتي (مجاني)", expanded=True):
-    try:
-        secret_key = st.secrets.get("GROQ_API_KEY", "")
-    except Exception:
-        secret_key = ""
-    key = st.text_input("مفتاح Groq المجاني (بدون بطاقة)", value=secret_key, type="password",
-                        help="أنشئه مجاناً من console.groq.com ← API Keys")
-    lang = st.selectbox("لغة الكلام", ["تلقائي", "العربية", "English"])
-    manual = st.text_area("أو الصق نص الكلام هنا (بديل بدون مفتاح؛ يوزَّع زمنه تلقائياً على الصوت)", height=100)
+try:
+    key = st.secrets.get("GROQ_API_KEY", "")
+except Exception:
+    key = ""
+lang = st.selectbox("③ لغة الكلام", ["تلقائي", "العربية", "English"])
+manual = st.text_area("نص الكلام (اختياري — يُستعمل فقط إذا تعذّر التفريغ التلقائي)", height=100)
 
 with st.expander("④ خيارات إضافية (اختيارية)"):
     quality = st.radio("الجودة", ["1080p (1080×1920) — الأفضل", "720p (720×1280) — أسرع"], index=0)
@@ -60,7 +57,7 @@ if st.button("🚀 أنشئ الفيديو", type="primary", disabled=audio is N
             words = words_from_text(manual, dur)
             text = manual
         else:
-            st.error("أدخل مفتاح Groq المجاني أو الصق نص الكلام.")
+            st.error("خدمة التفريغ الصوتي غير مفعّلة حالياً. الصق نص الكلام في الخانة المخصصة أو أعد المحاولة لاحقاً.")
             st.stop()
         st.session_state["text"] = text
         opts = {"signature": signature}

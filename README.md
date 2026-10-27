@@ -10,7 +10,7 @@
 ## النشر (Streamlit Community Cloud)
 1. ارفع كل محتويات هذا المجلد إلى مستودع GitHub (الملف `app.py` في الجذر).
 2. على share.streamlit.io: New app ← اختر المستودع ← الملف `app.py`.
-3. (اختياري) Settings ← Secrets: `GROQ_API_KEY = "gsk_..."` ليستعمله الجميع، أو يدخل كل مستخدم مفتاحه.
+3. (اختياري) Settings ← Secrets: `GROQ_API_KEY = "gsk_..."` ليستعمله الجميع، (إلزامي: المفتاح لم يعد يُطلب من المستخدم).
 
 ## مفتاح Groq المجاني
 console.groq.com ← إنشاء حساب بالبريد ← API Keys ← Create. الحد المجاني حوالي 20 طلباً/دقيقة و2000/يوم، وحجم الملف حتى 25MB (يُضغط تلقائياً).
