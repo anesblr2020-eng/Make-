@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "default_size": [720, 1280],
+  "default_fps": 30,
+  "presets": {
+    "editorial_lime": {
+      "label": "تحريري بالليموني (مستوحى من 7711)",
+      "background": {"type": "gradient", "colors": ["#F4F4F4", "#9E9E9E"], "direction": "diagonal"},
+      "palette": {"accent": "#D4E100", "text": "#111111", "muted": "#6B6B6B", "highlight_bg": "#D4E100"},
+      "fonts": {"display": "Anton", "body": "Inter", "script": "Pinyon Script"},
+      "shapes": ["circle_accent", "rect_accent", "thin_lines", "blur_edges"],
+      "motion": {"text_in": "scale_pop", "scene_transition": "slide_cut", "easing": "ease_out_cubic"},
+      "scene_duration": [1.2, 2.5],
+      "image_treatment": {"cutout": true, "grayscale": true},
+      "signature": true
+    },
+    "cinematic_teal": {
+      "label": "سينمائي تركوازي (مستوحى من 7714)",
+      "background": {"type": "gradient", "colors": ["#FFFFFF", "#1AAE9F"], "direction": "vertical"},
+      "dark_background": {"type": "space_glow", "colors": ["#000000", "#FF6A1A"]},
+      "palette": {"accent": "#1AAE9F", "text": "#FFFFFF", "muted": "#D0F2EE", "highlight_bg": "#1AAE9F"},
+      "fonts": {"display": "Montserrat", "body": "Inter"},
+      "shapes": ["circle_ring", "teal_band"],
+      "motion": {"text_in": "word_reveal", "scene_transition": "fade_glow", "easing": "ease_out_expo"},
+      "effects": ["glow", "particles", "blur_transition"],
+      "scene_duration": [1.5, 3.0],
+      "image_treatment": {"cutout": true, "silhouette": true}
+    },
+    "ai_tech_gray": {
+      "label": "تقني رمادي (مستوحى من 7708)",
+      "background": {"type": "solid", "color": "#EDEDED"},
+      "palette": {"accent": "#111111", "text": "#111111", "muted": "#8A8A8A", "card": "#FFFFFF"},
+      "fonts": {"display": "Archivo Black", "body": "Inter", "italic": "Inter Italic"},
+      "shapes": ["gray_circles", "rounded_card", "phone_mockup"],
+      "motion": {"text_in": "stack_up", "scene_transition": "push", "easing": "ease_in_out_cubic"},
+      "scene_duration": [1.5, 2.5],
+      "image_treatment": {"three_d_assets_required": true},
+      "watermark_policy": "do_not_copy_source_ui"
+    },
+    "captions_pop": {
+      "label": "ترجمة متحركة (مستوحى من 7393)",
+      "background": {"type": "video_or_solid", "color": "#000000"},
+      "palette": {"accent": "#D7141A", "text": "#FFFFFF", "muted": "#E0E0E0", "highlight_bg": "#D7141A"},
+      "fonts": {"display": "Montserrat Black", "body": "Montserrat"},
+      "shapes": ["highlight_box", "flash_white"],
+      "motion": {"text_in": "word_pop", "scene_transition": "white_flash", "easing": "ease_out_back"},
+      "caption_mode": {"per_word_timing": true, "max_words_per_line": 4},
+      "scene_duration": [0.8, 2.0],
+      "image_treatment": {"talking_head_required": true}
+    },
+    "arabic_explainer": {
+      "label": "شرح عربي بشخصية كرتونية (مستوحى من 8855)",
+      "size_override": [1080, 1920],
+      "background": {"type": "solid", "color": "#F7F1E3"},
+      "palette": {"accent": "#D7141A", "text": "#1A1A1A", "muted": "#2E5E4E", "bubble": "#FFFFFF", "success": "#1DB954", "dark": "#1F3A36"},
+      "fonts": {"display": "Cairo Black", "body": "Tajawal"},
+      "shapes": ["speech_bubble", "phone_mockup", "folder_icon", "check_list", "question_mark"],
+      "characters": {"presenter": "cartoon_pointing_man", "required_asset": true},
+      "motion": {"text_in": "bubble_pop", "scene_transition": "slide_up", "easing": "ease_out_quad"},
+      "scene_duration": [2.0, 4.0],
+      "rtl": true,
+      "text_shaping": ["arabic-reshaper", "python-bidi"]
+    }
+  }
+}
