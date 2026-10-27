@@ -1,0 +1,6 @@
+streamlit>=1.35
+pillow>=10.1
+numpy
+requests
+arabic-reshaper
+python-bidi
